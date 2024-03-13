@@ -65,7 +65,9 @@ select
 	id,
 	name,
 	address
-from data_warehouse.client c;
+from data_warehouse.client;
+
+select * from data_warehouse.dim_client;
 
 
 -- HOW MANY ORDERS SOLD IN Jl. RE Martadinata
