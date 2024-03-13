@@ -5,7 +5,7 @@ postgres_dw:
       type: postgres
       host: localhost
       user: postgres
-      password: postgres
+      password: admin
       port: 5432
       dbname: postgres
       schema: data_warehouse

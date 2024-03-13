@@ -18,7 +18,6 @@ CREATE TABLE data_warehouse.product_dimension (
 );
 
 -- Create a time dimension table
-
 CREATE TABLE data_warehouse.time_dimension (
     date_id SERIAL PRIMARY KEY,
     day_of_week VARCHAR(10),
@@ -28,7 +27,6 @@ CREATE TABLE data_warehouse.time_dimension (
 );
 
 -- Create a fact table for sales
-
 CREATE TABLE data_warehouse.sales_fact (
     sale_id SERIAL PRIMARY KEY,
     customer_id INT REFERENCES data_warehouse.customer_dimension(customer_id),
@@ -95,3 +93,32 @@ select
 from data_warehouse.sales_fact as sf
 left join data_warehouse.time_dimension as td on sf.date_id = td.date_id 
 where td.month = 'Jan' and td.year = 2024;
+
+
+-- HOMEWORK
+-- Andrew F.M. Suadnya
+
+-- no 1 (Berapa banyak penjualan total revenue di Quarter 1 2024)
+select 
+	SUM(quantity * revenue) as total_revenue
+from data_warehouse.sales_fact as sf
+left join data_warehouse.time_dimension as td on sf.date_id = td.date_id 
+where td.quarter = '1' and td.year = 2024;
+
+-- no 2 (Berapa banyak penjualan secara quantity di quarter 4 2023)
+select
+    SUM(quantity) as quantity
+from data_warehouse.sales_fact as sf
+left join data_warehouse.time_dimension as td on sf.date_id = td.date_id
+where td.quarter ='4' and td.year = 2023;
+
+-- no 3 (Dari semua data penjualan yang ada carilah di Quarter berapa dan tahun berapa penjualan paling banyak secara revenue)
+select 
+  td.quarter,
+  td.year,
+  SUM(quantity * revenue) as total_revenue
+from data_warehouse.sales_fact as sf
+left join data_warehouse.time_dimension as td on sf.date_id = td.date_id
+group by td.quarter, td.year
+order by total_revenue desc
+limit 1;
