@@ -14,7 +14,7 @@ https://www.enterprisedb.com/download-postgresql-binaries
 2. Open `transactions_dw.sql`
 3. Run all DDLs
 
-# ============ DBT Installation Part ============ 
+# ======== DBT Installation Part ========
 1. Create your project directory on your local laptop
 2. Create Python virtual environment `python3 -m venv env`
 3. Activate virtual environment `source env/bin/activate`
