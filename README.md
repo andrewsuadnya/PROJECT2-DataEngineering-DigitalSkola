@@ -14,7 +14,7 @@ https://www.enterprisedb.com/download-postgresql-binaries
 2. Open `transactions_dw.sql`
 3. Run all DDLs
 
-# ===== DBT Installation Part (Windows) =====
+# ======= DBT Installation Part (Windows) =======
 1. Create your project directory
 2. Run `pip install virtualenv` in Shell CMD
 3. In Shell run `cd my-project`
@@ -33,7 +33,7 @@ https://www.enterprisedb.com/download-postgresql-binaries
 8. Once the model was ran open dbt UI `dbt docs generate` then run `dbt docs serve`
 
 
-# =========== BUILD DATA WAREHOUSE ============
+# ======== BUILD DATA WAREHOUSE =========
 1. Change directory to `dbt_project`
 2. Create `intermediete` directory inside `models` directory:
    - Create `dim_customer.sql`
