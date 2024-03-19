@@ -14,19 +14,13 @@ https://www.enterprisedb.com/download-postgresql-binaries
 2. Open `transactions_dw.sql`
 3. Run all DDLs
 
-# ======== DBT Installation Part ========
-1. Create your project directory on your local laptop
-2. Create Python virtual environment `python3 -m venv env`
-3. Activate virtual environment `source env/bin/activate`
-4. Install DBT `pip install dbt-core==1.6.0 dbt-postgres==1.6.0`
-
-# ============ WINDOWS ===================
+# ===== DBT Installation Part (Windows) =====
 1. Create your project directory
 2. Run `pip install virtualenv` in Shell CMD
 3. In Shell run `cd my-project`
 4. Run `virtualenv --python C:\Path\To\Python\python.exe env`
 5. Activate `.\env\Scripts\activate`
-4. Install DBT `pip install dbt-core==1.6.0 dbt-postgres==1.6.0`
+4. Install DBT `pip install dbt-core==1.7.0 dbt-postgres==1.7.0`
 
 # ============ DBT Setup Part ============ 
 1. Change your terminal directory to your project directory
