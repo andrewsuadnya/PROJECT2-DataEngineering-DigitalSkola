@@ -6,3 +6,4 @@ select
     category,
     price
 from {{ source('data_warehouse', 'product_dimension') }}
+
