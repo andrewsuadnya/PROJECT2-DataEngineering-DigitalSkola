@@ -1,7 +1,9 @@
-# Download Potgresql
+# Create Data Warehouse Using DBT in Postgresql
+
+## Download Potgresql
 https://www.enterprisedb.com/download-postgresql-binaries
 
-# Using Docker
+## Using Docker
 1. Download and install [docker](https://docs.docker.com/desktop/install/windows-install/) and [docker-compose](https://docs.docker.com/compose/install/)
 2. Run `docker-compose up -d`
 
@@ -14,15 +16,22 @@ https://www.enterprisedb.com/download-postgresql-binaries
 2. Open `transactions_dw.sql`
 3. Run all DDLs
 
-# ======= DBT Installation Part (Windows) =======
+## ======= DBT Installation Part (Windows) =======
+### using venv
 1. Create your project directory
 2. Run `pip install virtualenv` in Shell CMD
 3. In Shell run `cd my-project`
 4. Run `virtualenv --python C:\Path\To\Python\python.exe env`
 5. Activate `.\env\Scripts\activate`
-4. Install DBT `pip install dbt-core==1.7.0 dbt-postgres==1.7.0`
+4. Install DBT `pip install dbt-core dbt-postgres`
 
-# ============ DBT Setup Part ============ 
+### using conda
+1. Create your project directory
+2. Run `conda create --name env_name python=3.11` in Shell CMD
+5. Activate `conda activate env_name`
+4. Install DBT `pip install dbt-core dbt-postgres` or `conda install dbt-core dbt-postgres`
+
+## ============ DBT Setup Part ============ 
 1. Change your terminal directory to your project directory
 2. Initialize DBT project `dbt init`
 3. To validate connection change directory to the root project and run `dbt debug`
@@ -33,7 +42,7 @@ https://www.enterprisedb.com/download-postgresql-binaries
 8. Once the model was ran open dbt UI `dbt docs generate` then run `dbt docs serve`
 
 
-# ======== BUILD DATA WAREHOUSE =========
+## ======== BUILD DATA WAREHOUSE =========
 1. Change directory to `dbt_project`
 2. Create `intermediete` directory inside `models` directory:
    - Create `dim_customer.sql`
@@ -45,5 +54,3 @@ https://www.enterprisedb.com/download-postgresql-binaries
 4. Run this command in the terminal to build model `dbt run`
 5. Run this command to generate DBT documentation `dbt docs generate`
 6. Run this command to generate DBT UI `dbt docs serve --port 8080` 
-
-
