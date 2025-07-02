@@ -1,4 +1,4 @@
-# Create Data Warehouse Using DBT in Postgresql
+# 🧱 Building a Data Warehouse with DBT & PostgreSQL
 
 ## Project Overview
 This project builds a data warehouse to store and analyze sales data. It uses dbt to define data models and transformations, creating dimension and fact tables to support business intelligence queries. The final output includes a revenue_monthly table in the mart layer, which aggregates sales data by month for reporting purposes. The project also generates dbt documentation and a lineage graph to visualize data dependencies.
